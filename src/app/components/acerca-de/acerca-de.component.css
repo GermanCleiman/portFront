@@ -1,0 +1,94 @@
+
+.row{
+  padding: 20px;
+}
+
+div{
+  background-color: cadetblue;
+  text-align: center;
+}
+
+#nombre{
+  font-weight: bold;
+  margin-top: 10%;
+}
+/* media query*/
+
+@media (max-width: 575px){
+  #foto{
+    width: 50%;
+    margin-left: 1.5%;
+    border-radius: 45%;
+  }
+}
+@media (min-width: 576px){
+  #foto{
+    position: absolute;
+    width: 15%;
+    border-radius: 100%;
+    box-shadow: 3px 3px 3px grey;
+    left: 3%;
+    top: 280px;
+  }
+}
+
+  @media (min-width: 700px){
+    #foto{
+      position: absolute;
+      width: 15%;
+      border-radius: 100%;
+      box-shadow: 3px 3px 3px grey;
+      left: 3%;
+      top: 310px;
+    }
+  }
+@media (min-width: 800px){
+  #foto{
+    position: absolute;
+    width: 15%;
+    border-radius: 100%;
+    box-shadow: 3px 3px 3px grey;
+    left: 3%;
+    top: 340px;
+  }
+}
+@media (min-width: 900px){
+  #foto{
+    position: absolute;
+    width: 15%;
+    border-radius: 100%;
+    box-shadow: 3px 3px 3px grey;
+    left: 3%;
+    top: 380px;
+  }
+}
+@media (min-width: 1050px){
+  #foto{
+    position: absolute;
+    width: 15%;
+    border-radius: 100%;
+    box-shadow: 3px 3px 3px grey;
+    left: 3%;
+    top: 420px;
+  }
+}
+@media (min-width: 1100px){
+  #foto{
+    position: absolute;
+    width: 15%;
+    border-radius: 100%;
+    box-shadow: 3px 3px 3px grey;
+    left: 3%;
+    top: 450px;
+  }
+}
+@media (min-width: 1450px){
+  #foto{
+    position: absolute;
+    width: 15%;
+    border-radius: 100%;
+    box-shadow: 3px 3px 3px grey;
+    left: 3%;
+    top: 550px;
+    }
+}
