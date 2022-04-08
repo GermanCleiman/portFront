@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AutenticationService } from '../../services/autentication.service';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +11,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   form:FormGroup;
-
-  constructor(private formBuilder:FormBuilder) {
+/*Inyecto el servicio de autenticacion */
+  constructor(private formBuilder:FormBuilder, private autenticationService: AutenticationService, private ruta:Router) {
 
     this.form = this.formBuilder.group(
       {
@@ -34,5 +36,19 @@ export class LoginComponent implements OnInit {
 
   get Password(){
     return this.form.get('password');
+  }
+  /*Este metodo se activa al apretar el login
+  y manda las credenciales(de form) a la API para obtener el codigo */
+
+  onEnviar(event:Event){
+    event.preventDefault;//para lo que hace por default
+    this.autenticationService.iniciarSesion(this.form.value).subscribe(data=>{
+      console.log("DATA: " + JSON.stringify(data));//muestra los datos
+      /*Y si esta todo bien nos redirige por routing a la pagina que especifiquemos
+      hay que inyectar el servicio de router en el constructor(ruta)*/
+      this.ruta.navigate(['/port-vista']);
+      /* ahora configurar para que el boton login llame a este metodo*/
+
+    })
   }
 }

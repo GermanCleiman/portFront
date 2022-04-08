@@ -16,6 +16,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { PortVistaComponent } from './components/port-vista/port-vista.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PortVistaService } from './services/port-vista.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorService } from './services/interceptor.service';
+import { PortAdminComponent } from './components/port-admin/port-admin.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProyectosComponent,
     FooterComponent,
     LoginComponent,
-    PortVistaComponent
+    PortVistaComponent,
+    PortAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     NgCircleProgressModule.forRoot({}),
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [PortVistaService,
+  {
+    provide:HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
