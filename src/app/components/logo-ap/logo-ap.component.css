@@ -2,3 +2,32 @@
   width: 150px;
   height: 110px;
 }
+
+img{
+  width: 40px;
+
+}
+.container{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.redes{
+  margin-right: 1em;
+}
+
+.redes img{
+  margin: .2rem;
+}
+
+.btn{
+  border-width: medium;
+  background-color: darkcyan;
+  margin: .4rem;
+}
+
+
+
+
+
